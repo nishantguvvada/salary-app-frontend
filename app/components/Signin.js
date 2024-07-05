@@ -14,7 +14,7 @@ export const Signin = () => {
 
         try{
 
-            const response = axios.post(`${BACKEND_URL}/signin`, {
+            const response = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signin`, {
                 email: email,
                 password: password
             });
