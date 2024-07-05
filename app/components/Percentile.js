@@ -31,7 +31,7 @@ export const Percentile = () => {
         try {// every function causing a render should have preventDefault()
             e.preventDefault(); // without it the page re-renders causing the result to be wiped out within seconds
             const response = await axios.post(
-                `${BACKEND_URL}/percentile`,
+                `${process.env.NEXT_PUBLIC_BACKEND_URL}/percentile`,
                 {value: salary});
             const percentile = response.data;
             setResult(percentile.result);
