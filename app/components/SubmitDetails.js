@@ -15,7 +15,7 @@ export const SubmitDetails = () => {
 
         try{
 
-            const response = await axios.post(`${BACKEND_URL}/details`, 
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/details`, 
                 {
                     salary: Number(salary),
                     designation: designation,
