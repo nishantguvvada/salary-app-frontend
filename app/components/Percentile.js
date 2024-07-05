@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { DisplayResult } from './DisplayResult';
 
@@ -8,8 +8,15 @@ export const Percentile = () => {
 
     const [salary, setSalary] = useState();
     const [result, setResult] = useState(0);
+    const [token, setToken] = useState();
 
-    const token = localStorage.getItem("token");
+    useEffect(() => {
+
+        const localStorageToken = localStorage.getItem("token");
+        setToken(localStorageToken);
+
+    },[]);
+    
 
 
     const refreshPage = () => {
