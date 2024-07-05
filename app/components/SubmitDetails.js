@@ -15,7 +15,7 @@ export const SubmitDetails = () => {
 
         try{
 
-            const response = await axios.post("http://localhost:8000/details", 
+            const response = await axios.post(`${BACKEND_URL}/details`, 
                 {
                     salary: Number(salary),
                     designation: designation,
