@@ -13,19 +13,17 @@ export const DisplayResult = ({percentile}) => {
         const fetchStats = async () => {
 
             const maxSal = await axios.get(
-                `${BACKEND_URL}/maximumsalary`);
+                `${process.env.NEXT_PUBLIC_BACKEND_URL}/maximumsalary`);
 
             setMaxSalary(maxSal.data.maximum);
             
             const avgSal = await axios.get(
-                `${BACKEND_URL}/averagesalary`);
+                `${process.env.NEXT_PUBLIC_BACKEND_URL}/averagesalary`);
 
             setAvgSalary(avgSal.data.average);
 
-            console.log(avgSal);
-
             const contributors = await axios.get(
-                `${BACKEND_URL}/totalusers`);
+                `${process.env.NEXT_PUBLIC_BACKEND_URL}/totalusers`);
 
             setPeers(contributors.data.total)
             
