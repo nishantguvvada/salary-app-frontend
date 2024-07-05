@@ -17,7 +17,7 @@ export const Signup = () => {
         try {
 
             const response = await axios.post(
-                "http://localhost:8000/signup",
+                `${BACKEND_URL}/signup`,
                 {
                     username: userName, 
                     email: email, 
